@@ -1,0 +1,17 @@
+npm i graphql-ws
+npm i graphql-tools
+npm i http 
+-- create an http server and attach it to express
+import {createServer as createHttpServer} from 'node:http";
+inport {useServer as useWsServer } from 'graph-ws/lib/use/ws'
+import { WebSocketServer } from 'ws';
+import {PubSub } from 'graphql-subscriptions';
+
+const httpServer = createHttpServer(app);
+const wsServer = new WebSocketServer({server: httpServer , path: '/graphql' } );
+useWsServer({schema} , wsServer )
+
+httpServer.listen({port : PORT ), () => {
+	console.log("Server up and runnning at PORT");
+	console.log("Graphql endpoint 
+})
